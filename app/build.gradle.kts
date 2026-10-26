@@ -115,6 +115,9 @@ android {
 dependencies {
     implementation("androidx.core:core-ktx:1.13.1")
     implementation("androidx.activity:activity-ktx:1.9.3")
+    // Play services pulls in fragment 1.0, which breaks registerForActivityResult
+    // (the file chooser); pin a current one.
+    implementation("androidx.fragment:fragment-ktx:1.8.5")
     implementation("androidx.webkit:webkit:1.12.1")
     implementation("androidx.media:media:1.7.0")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
