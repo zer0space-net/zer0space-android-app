@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- Cleartext is allowed for the native source fetcher only: a few hoster
+         mirrors still answer on plain http. The site itself is https-only (the
+         app refuses to open anything else), and user-installed CAs are never
+         trusted, so a profile on the phone cannot intercept the session. -->
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">zer0space.com</domain>
+    </domain-config>
+</network-security-config>

@@ -1,0 +1,15 @@
+.gradle/
+build/
+app/build/
+local.properties
+.idea/
+*.iml
+.DS_Store
+captures/
+.externalNativeBuild/
+.cxx/
+# Signing material never goes into git. CI decodes it from Actions secrets.
+*.jks
+*.keystore
+*.p12
+keystore.properties

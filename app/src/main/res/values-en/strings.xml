@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="offline_title">Cannot reach zer0space</string>
+    <string name="offline_body">Check your internet connection and try again.</string>
+    <string name="retry">Try again</string>
+    <string name="webview_too_old">Android System WebView is too old. Please update it in the Play Store, otherwise Crimson sources only resolve on the server.</string>
+    <string name="channel_playback">Playback</string>
+    <string name="channel_playback_desc">Controls for music playing in the background.</string>
+    <string name="action_play">Play</string>
+    <string name="action_pause">Pause</string>
+    <string name="action_next">Next</string>
+    <string name="action_previous">Previous</string>
+    <string name="no_browser">No browser found to open the link.</string>
+</resources>

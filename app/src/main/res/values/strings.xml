@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">zer0space</string>
+    <string name="offline_title">Keine Verbindung zu zer0space</string>
+    <string name="offline_body">Prüfe deine Internetverbindung und versuche es noch einmal.</string>
+    <string name="retry">Erneut versuchen</string>
+    <string name="webview_too_old">Android System WebView ist zu alt. Bitte im Play Store aktualisieren, sonst laufen Crimson-Quellen nur über den Server.</string>
+    <string name="channel_playback">Wiedergabe</string>
+    <string name="channel_playback_desc">Steuerung für Musik, die im Hintergrund läuft.</string>
+    <string name="action_play">Abspielen</string>
+    <string name="action_pause">Pause</string>
+    <string name="action_next">Weiter</string>
+    <string name="action_previous">Zurück</string>
+    <string name="no_browser">Kein Browser zum Öffnen des Links gefunden.</string>
+</resources>

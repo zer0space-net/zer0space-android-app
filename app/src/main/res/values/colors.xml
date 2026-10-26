@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="zs_bg">#04070E</color>
+    <color name="zs_panel">#0B1220</color>
+    <color name="zs_accent">#2F7DFB</color>
+    <color name="zs_text">#E6EDF8</color>
+    <color name="zs_text_dim">#94A5C2</color>
+    <color name="ic_launcher_background">#070B16</color>
+</resources>
