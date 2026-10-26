@@ -59,11 +59,12 @@ object UrlGuard {
         dns.lookup(url.host)
     }
 
-    val dns: Dns = Dns { hostname ->
-        val all = Dns.SYSTEM.lookup(hostname)
-        val ok = all.filter { isPublic(it) }
-        if (ok.isEmpty()) throw UnknownHostException("$hostname has no public address")
-        ok
+    val dns: Dns = object : Dns {
+        override fun lookup(hostname: String): List<InetAddress> {
+            val ok = Dns.SYSTEM.lookup(hostname).filter { isPublic(it) }
+            if (ok.isEmpty()) throw UnknownHostException("$hostname has no public address")
+            return ok
+        }
     }
 
     fun isIpLiteral(host: String): Boolean =

@@ -230,7 +230,7 @@ class MainActivity : ComponentActivity() {
                 progress.progress = newProgress
             }
 
-            override fun onShowCustomView(view: View, callback: CustomViewCallback) {
+            override fun onShowCustomView(view: View, callback: WebChromeClient.CustomViewCallback) {
                 if (customView != null) {
                     callback.onCustomViewHidden()
                     return
@@ -265,7 +265,7 @@ class MainActivity : ComponentActivity() {
             override fun onShowFileChooser(
                 view: WebView,
                 callback: ValueCallback<Array<Uri>>,
-                params: FileChooserParams,
+                params: WebChromeClient.FileChooserParams,
             ): Boolean {
                 fileCallback?.onReceiveValue(null)
                 fileCallback = callback

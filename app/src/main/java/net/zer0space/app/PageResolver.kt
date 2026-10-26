@@ -53,12 +53,12 @@ class PageResolver(private val host: FrameLayout) {
 
     suspend fun captureMedia(url: String, timeoutMs: Long, mustInclude: List<String>, framed: Boolean): JSONObject {
         UrlGuard.check(url)
-        return mutex.withLock { run(Mode.Media(mustInclude), url, timeoutMs, framed) }
+        return mutex.withLock { execute(Mode.Media(mustInclude), url, timeoutMs, framed) }
     }
 
     suspend fun followGate(url: String, timeoutMs: Long): JSONObject {
         val gateHost = UrlGuard.check(url).host.lowercase()
-        return mutex.withLock { run(Mode.Gate(gateHost), url, timeoutMs, framed = false) }
+        return mutex.withLock { execute(Mode.Gate(gateHost), url, timeoutMs, framed = false) }
     }
 
     private sealed class Mode {
@@ -66,7 +66,7 @@ class PageResolver(private val host: FrameLayout) {
         class Gate(val gateHost: String) : Mode()
     }
 
-    private suspend fun run(mode: Mode, url: String, timeoutMs: Long, framed: Boolean): JSONObject {
+    private suspend fun execute(mode: Mode, url: String, timeoutMs: Long, framed: Boolean): JSONObject {
         val result = CompletableDeferred<JSONObject>()
         var view: WebView? = null
         try {
@@ -107,7 +107,7 @@ class PageResolver(private val host: FrameLayout) {
         val wv = WebView(host.context)
         wv.alpha = 0f
         wv.isFocusable = false
-        wv.importantForAccessibility = WebView.IMPORTANT_FOR_ACCESSIBILITY_NO_HIDE_DESCENDANTS
+        wv.importantForAccessibility = android.view.View.IMPORTANT_FOR_ACCESSIBILITY_NO_HIDE_DESCENDANTS
         wv.settings.apply {
             javaScriptEnabled = true
             domStorageEnabled = true
